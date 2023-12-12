@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>JS</title>
+</head>
+<body>
+<script>
+   /*1*/
+
+    let variable_one = prompt('var one');
+    let variable_two = prompt('var two');
+
+    if (variable_one === variable_two){
+        console.log('equally');
+    } else {
+        console.log('no equally');
+    }
+
+    let variable_three = 'world';
+    variable_one += variable_three;
+
+    /*2*/
+
+    let my_arr = new Array('apple', 'strawberry', 'blueberry', 'raspberry', 'lemon');
+    for (var index = 0; index < my_arr.length(); index++){
+        if (f[index] === 'apple') console.log('apple green')
+        if (f[index] === 'strawberry') console.log('strawberry red')
+        if (f[index] === 'blueberry') console.log('blueberry blue')
+        if (f[index] === 'raspberry') console.log('raspberry light red')
+        if (f[index] === 'lemon') console.log('lemon yellow')
+    }
+
+    /*3*/
+
+    let count_people = 0;
+    let salary = 0;
+
+    while (count_people === 0) {
+      let input_count_people = prompt('Введите количество человек:', undefined);
+      count_people = parseFloat(input_count_people);
+    }
+
+    while (salary === 0) {
+     let input_salary = prompt('Введите зарплату на человека:', undefined);
+     salary = parseFloat(input_salary);
+    }
+
+    let total_cost = count_people * salary;
+    alert('Затраты на зарплату: ' + totalCost);
+
+
+    /*4*/
+
+    let klassSoStudentami = [
+    {FIO:'Петров А.А.',Ocenka:5},
+    {FIO:'Иванов Б.Б.',Ocenka:3.4},
+    {FIO:'Сидоров Г.Г.',Ocenka:9},
+    {FIO:'Немолодой Д.Д',Ocenka:2},
+    {FIO:'Молодой Е.Е',Ocenka:3.4}];
+
+    let sum = 0;
+    let count = 0;
+    let ploxieStudenti = [];
+
+    for (let index = 0; index < klassSoStudentami.length; index++) {
+        let student = klassSoStudentami[index];
+        let { FIO, Ocenka } = student;
+
+        if (Ocenka > 5 || Ocenka < 0) {
+            console.log('Это значение учитываться не будет, оно не соответствует допустимым значениям');
+            continue;
+        }
+        if (Ocenka < 4) {
+            ploxieStudenti.push(student);
+        }
+
+        sum += Ocenka;
+        count += 1;
+    }
+
+    let averageGrade = sum / count;
+    console.log('Средняя оценка:', averageGrade.toFixed(2));
+    console.log('Плохие студенты:');
+
+    if (ploxieStudenti.length === 0) {
+        console.log('Таких нет');
+    } else {
+        ploxieStudenti.forEach((student) => {
+        console.log('ФИО:', student.FIO, '; Оценка:', student.Ocenka);
+        });
+    }
+</script>
+</body>
+</html>
